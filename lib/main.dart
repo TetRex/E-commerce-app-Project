@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'components/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'components/ads.dart';
 
 void main() {
   runApp(const MainApp());
@@ -98,10 +99,7 @@ class MainApp extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(children: [
-
-              ],
-              ),
+                const Ads(),
               ],
             ),
           ),
