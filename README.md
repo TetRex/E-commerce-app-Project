@@ -1,3 +1,4 @@
-# e_commerce_app
+# User Intrface course project
 
-A new Flutter project.
+This is e-commerce app for User Interface course project
+
