@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:search_app_bar_page/search_app_bar_page.dart';
-import 'drawer.dart';
+import 'components/drawer.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,16 +14,20 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Add this line to remove debug banner
       home: Scaffold(
+        backgroundColor: Colors.white,
         drawer: AppDrawer(),
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
+          titleSpacing: 0,
+          leadingWidth: 70,
+
           leading: Container(
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 243, 243, 243),
               shape: BoxShape.circle,
             ),
-            margin: EdgeInsets.all(8),
+            margin: EdgeInsets.all(10),
             child: Builder(
               builder: (context) => IconButton(
                 onPressed: () {
@@ -31,7 +35,7 @@ class MainApp extends StatelessWidget {
                 },
                 icon: ImageIcon(
                   AssetImage('assets/icons/drawer.png'),
-                  size: 24,
+                  size: 20,
                   color: const Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
@@ -43,7 +47,7 @@ class MainApp extends StatelessWidget {
                 color: const Color.fromARGB(255, 243, 243, 243),
                 shape: BoxShape.circle,
               ),
-              margin: EdgeInsets.all(8),
+              margin: EdgeInsets.all(10),
               child: IconButton(
                 onPressed: () {},
                 icon: ImageIcon(
@@ -55,42 +59,97 @@ class MainApp extends StatelessWidget {
             ),
           ],
         ),
-        body: Scaffold(backgroundColor: Colors.white),
+
+        body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Container(
+            margin: EdgeInsets.only(left: 10),
+            child: Column(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Hello User  ',
+                          style: GoogleFonts.interTight(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        ImageIcon(
+                          AssetImage('assets/icons/hand-wave.png'),
+                          color: Colors.deepOrange,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Let\'s start shopping!',
+                          style: GoogleFonts.inter(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: const Color.fromARGB(255, 100, 100, 100),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Row(children: [
+
+              ],
+              ),
+              ],
+            ),
+          ),
+        ),
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  AssetImage('assets/icons/home.png'),
-                  size: 30,
-                  color: const Color.fromARGB(255, 180, 180, 180),
+              SizedBox(
+                child: IconButton(
+                  onPressed: () {},
+                  icon: ImageIcon(
+                    AssetImage('assets/icons/home.png'),
+                    size: 30,
+                    color: const Color.fromARGB(255, 120, 120, 120),
+                  ),
                 ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  AssetImage('assets/icons/heart.png'),
-                  size: 30,
-                  color: const Color.fromARGB(255, 180, 180, 180),
+              SizedBox(
+                child: IconButton(
+                  onPressed: () {},
+                  icon: ImageIcon(
+                    AssetImage('assets/icons/heart.png'),
+                    size: 30,
+                    color: const Color.fromARGB(255, 120, 120, 120),
+                  ),
                 ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  AssetImage('assets/icons/shopping-cart.png'),
-                  size: 30,
-                  color: const Color.fromARGB(255, 180, 180, 180),
+              SizedBox(
+                child: IconButton(
+                  onPressed: () {},
+                  icon: ImageIcon(
+                    AssetImage('assets/icons/shopping-cart.png'),
+                    size: 30,
+                    color: const Color.fromARGB(255, 120, 120, 120),
+                  ),
                 ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  AssetImage('assets/icons/user.png'),
-                  size: 30,
-                  color: const Color.fromARGB(255, 180, 180, 180),
+              SizedBox(
+                child: IconButton(
+                  onPressed: () {},
+                  icon: ImageIcon(
+                    AssetImage('assets/icons/user.png'),
+                    size: 30,
+                    color: const Color.fromARGB(255, 120, 120, 120),
+                  ),
                 ),
               ),
             ],

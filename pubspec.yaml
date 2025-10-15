@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   search_app_bar_page: ^2.5.0
+  google_fonts:
 
 dev_dependencies:
   flutter_test:
@@ -25,3 +26,4 @@ flutter:
     - assets/icons/shopping-cart.png
     - assets/icons/search.png
     - assets/icons/drawer.png
+    - assets/icons/hand-wave.png
