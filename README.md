@@ -1,4 +1,4 @@
-# User Intrface course project
+# User Interface course project
 
 This is e-commerce app for User Interface course project
 
