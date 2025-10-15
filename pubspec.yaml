@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  search_app_bar_page: ^2.5.0
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +18,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icons/user.png
+    - assets/icons/home.png
+    - assets/icons/heart.png
+    - assets/icons/shopping-cart.png
+    - assets/icons/search.png
+    - assets/icons/drawer.png
