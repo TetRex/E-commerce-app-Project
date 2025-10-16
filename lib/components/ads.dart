@@ -27,9 +27,7 @@ class Ads extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 0),
           children: [
             GestureDetector(
-              onTap: () {
-                // Ваш код при нажатии
-              },
+              onTap: () {},
               child: Container(
                 width: 300,
                 margin: const EdgeInsets.only(left: 16, right: 16),
@@ -43,9 +41,7 @@ class Ads extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {
-                // Ваш код при нажатии
-              },
+              onTap: () {},
               child: Container(
                 width: 300,
                 margin: const EdgeInsets.only(right: 16),
@@ -54,14 +50,12 @@ class Ads extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.asset('assets/images/ads1.png'),
+                  child: Image.asset('assets/images/ads2.png'),
                 ),
               ),
             ),
             GestureDetector(
-              onTap: () {
-                // Ваш код при нажатии
-              },
+              onTap: () {},
               child: Container(
                 width: 300,
                 margin: const EdgeInsets.only(right: 16),
@@ -70,7 +64,7 @@ class Ads extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.asset('assets/images/ads1.png'),
+                  child: Image.asset('assets/images/ads3.png'),
                 ),
               ),
             ),
