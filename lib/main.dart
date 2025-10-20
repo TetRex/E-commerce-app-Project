@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/components/categories.dart';
 import 'package:flutter/material.dart';
 import 'components/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -64,7 +65,7 @@ class MainApp extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: Container(
-            margin: EdgeInsets.only(left: 10),
+            margin: EdgeInsets.only(left: 8, right: 8),
             child: Column(
               children: [
                 Column(
@@ -101,6 +102,20 @@ class MainApp extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const Ads(),
+                SizedBox(height: 15),
+                Row(
+                  children: [
+                    Text(
+                      'Top Categories',
+                      style: GoogleFonts.interTight(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                const Categories(),
               ],
             ),
           ),
@@ -117,7 +132,7 @@ class MainApp extends StatelessWidget {
                   icon: ImageIcon(
                     AssetImage('assets/icons/home.png'),
                     size: 30,
-                    color: const Color.fromARGB(255, 120, 120, 120),
+                    color: const Color.fromARGB(255, 255, 102, 0),
                   ),
                 ),
               ),
