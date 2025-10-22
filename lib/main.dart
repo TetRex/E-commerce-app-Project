@@ -102,20 +102,8 @@ class MainApp extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const Ads(),
-                SizedBox(height: 15),
-                Row(
-                  children: [
-                    Text(
-                      'Top Categories',
-                      style: GoogleFonts.interTight(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-                const Categories(),
+                const SizedBox(height: 10),
+                const Categories_all(),
               ],
             ),
           ),
