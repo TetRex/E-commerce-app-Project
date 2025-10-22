@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/components/categories.dart';
+import 'package:e_commerce_app/components/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'components/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -51,7 +52,7 @@ class MainApp extends StatelessWidget {
               ),
               margin: EdgeInsets.all(10),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () => showNotReadySnackBar(context),
                 icon: ImageIcon(
                   AssetImage('assets/icons/search.png'),
                   size: 30,
@@ -63,7 +64,7 @@ class MainApp extends StatelessWidget {
         ),
 
         body: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(10),
           child: Container(
             margin: EdgeInsets.only(left: 8, right: 8),
             child: Column(

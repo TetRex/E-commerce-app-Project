@@ -1,18 +1,13 @@
+import 'package:e_commerce_app/components/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoryItem {
   final String iconPath;
-  final String label;
   final Color? backgroundColor;
   final Color? iconColor;
 
-  CategoryItem({
-    required this.iconPath,
-    required this.label,
-    this.backgroundColor,
-    this.iconColor,
-  });
+  CategoryItem({required this.iconPath, this.backgroundColor, this.iconColor});
 }
 
 // Widget to display a single category
@@ -24,13 +19,13 @@ class Categorie extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 12),
+      margin: const EdgeInsets.only(right: 10, top: 4, left: 10),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            height: 60,
-            width: 52,
+            height: 50,
+            width: 50,
             decoration: BoxDecoration(
               color:
                   category.backgroundColor ??
@@ -39,28 +34,22 @@ class Categorie extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.black,
-                  spreadRadius: 1,
-                  blurRadius: 3,
-                  offset: const Offset(0, 2),
+                  spreadRadius: 0.1,
+                  blurRadius: 1,
                 ),
               ],
             ),
             child: Center(
-              child: ImageIcon(
-                AssetImage(category.iconPath),
-                color:
-                    category.iconColor ?? const Color.fromARGB(255, 85, 85, 85),
-                size: 30,
+              child: IconButton(
+                onPressed: () {},
+                icon: ImageIcon(
+                  AssetImage(category.iconPath),
+                  color:
+                      category.iconColor ??
+                      const Color.fromARGB(255, 85, 85, 85),
+                  size: 25,
+                ),
               ),
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            category.label,
-            style: GoogleFonts.interTight(
-              fontSize: 10,
-              fontWeight: FontWeight.w500,
-              color: Colors.black87,
             ),
           ),
         ],
@@ -69,21 +58,22 @@ class Categorie extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class Categories_all extends StatelessWidget {
   const Categories_all({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<CategoryItem> categories = [
-      CategoryItem(iconPath: 'assets/icons/watch-smart.png', label: 'Watches'),
-      CategoryItem(iconPath: 'assets/icons/watch-smart.png', label: 'Watches'),
-      CategoryItem(iconPath: 'assets/icons/watch-smart.png', label: 'Watches'),
-      CategoryItem(iconPath: 'assets/icons/watch-smart.png', label: 'Watches'),
-      CategoryItem(iconPath: 'assets/icons/watch-smart.png', label: 'Watches'),
+      CategoryItem(iconPath: 'assets/icons/watch-smart.png'),
+      CategoryItem(iconPath: 'assets/icons/tshirt.png'),
+      CategoryItem(iconPath: 'assets/icons/bag.png'),
+      CategoryItem(iconPath: 'assets/icons/boot.png'),
+      CategoryItem(iconPath: 'assets/icons/glasses.png'),
     ];
 
     return SizedBox(
-      height: 140,
+      height: 150,
       child: Column(
         children: [
           Row(
@@ -104,7 +94,7 @@ class Categories_all extends StatelessWidget {
                   backgroundColor: Colors.white,
                   shadowColor: const Color.fromARGB(255, 219, 132, 1),
                 ),
-                onPressed: () {},
+                onPressed: () => showNotReadySnackBar(context),
                 child: Text(
                   'See all',
                   style: GoogleFonts.interTight(
@@ -116,14 +106,34 @@ class Categories_all extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 0),
+          const SizedBox(height: 5),
           Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: categories.length,
-              itemBuilder: (context, index) {
-                return Categorie(category: categories[index]);
+            child: ShaderMask(
+              shaderCallback: (Rect bounds) {
+                return LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [
+                    Colors.transparent,
+                    Colors.black,
+                    Colors.black,
+                    Colors.transparent,
+                  ],
+                  stops: const [0.0, 0.1, 0.9, 1.0],
+                ).createShader(bounds);
               },
+              blendMode: BlendMode.dstIn,
+              child: Container(
+                margin: const EdgeInsets.only(left: 0, right: 0),
+                child: ListView.builder(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: categories.length,
+                  itemBuilder: (context, index) {
+                    return Categorie(category: categories[index]);
+                  },
+                ),
+              ),
             ),
           ),
         ],
