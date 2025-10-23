@@ -21,7 +21,9 @@ class MainApp extends StatelessWidget {
         backgroundColor: Colors.white,
         drawer: AppDrawer(),
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(0, 255, 255, 255),
+          scrolledUnderElevation: 0,
+          surfaceTintColor: Colors.transparent,
+          backgroundColor: Colors.white,
           elevation: 0,
           titleSpacing: 0,
           leadingWidth: 70,
@@ -116,12 +118,51 @@ class MainApp extends StatelessWidget {
                       const SizedBox(height: 10),
                       const Categories_all(),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
                         margin: EdgeInsets.only(top: 4),
-                        child: Wrap(
-                          spacing: 12,
-                          runSpacing: 12,
-                          children: [ProductCard(), ProductCard()],
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const ProductCard(
+                                  productName: 'Apple Watch Series 9',
+                                  imagePath: 'assets/images/apple-watch.png',
+                                  currentPrice: 124.99,
+                                  oldPrice: 249.99,
+                                  discountPercent: 50,
+                                ),
+                                const SizedBox(width: 18),
+                                const ProductCard(
+                                  productName: 'Samsung Galaxy Watch 7',
+                                  imagePath: 'assets/images/samsung-watch.avif',
+                                  currentPrice: 129.99,
+                                  oldPrice: 189.99,
+                                  discountPercent: 32,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 16),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const ProductCard(
+                                  productName: 'Apple Watch Series 9',
+                                  imagePath: 'assets/images/apple-watch.png',
+                                  currentPrice: 124.99,
+                                  oldPrice: 249.99,
+                                  discountPercent: 50,
+                                ),
+                                const SizedBox(width: 18),
+                                const ProductCard(
+                                  productName: 'Samsung Galaxy Watch 7',
+                                  imagePath: 'assets/images/samsung-watch.avif',
+                                  currentPrice: 129.99,
+                                  oldPrice: 189.99,
+                                  discountPercent: 32,
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ],

@@ -35,3 +35,5 @@ flutter:
     - assets/icons/bag.png
     - assets/icons/boot.png
     - assets/icons/glasses.png
+    - assets/images/apple-watch.png
+    - assets/images/samsung-watch.avif

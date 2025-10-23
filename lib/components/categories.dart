@@ -24,8 +24,8 @@ class Categorie extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            height: 50,
-            width: 50,
+            height: 70,
+            width: 70,
             decoration: BoxDecoration(
               color:
                   category.backgroundColor ??
@@ -47,7 +47,7 @@ class Categorie extends StatelessWidget {
                   color:
                       category.iconColor ??
                       const Color.fromARGB(255, 85, 85, 85),
-                  size: 25,
+                  size: 30,
                 ),
               ),
             ),
