@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/components/categories.dart';
+import 'package:e_commerce_app/components/product_card.dart';
 import 'package:e_commerce_app/components/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'components/drawer.dart';
@@ -20,7 +21,7 @@ class MainApp extends StatelessWidget {
         backgroundColor: Colors.white,
         drawer: AppDrawer(),
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: const Color.fromARGB(0, 255, 255, 255),
           elevation: 0,
           titleSpacing: 0,
           leadingWidth: 70,
@@ -63,50 +64,71 @@ class MainApp extends StatelessWidget {
           ],
         ),
 
-        body: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Container(
-            margin: EdgeInsets.only(left: 8, right: 8),
-            child: Column(
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          'Hello User  ',
-                          style: GoogleFonts.interTight(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
+        body: Container(
+          margin: const EdgeInsets.only(left: 0, right: 0),
+          child: ListView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                  margin: EdgeInsets.only(left: 8, right: 8),
+                  child: Column(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                'Hello User  ',
+                                style: GoogleFonts.interTight(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              ImageIcon(
+                                AssetImage('assets/icons/hand-wave.png'),
+                                color: Colors.deepOrange,
+                              ),
+                            ],
                           ),
-                        ),
-                        ImageIcon(
-                          AssetImage('assets/icons/hand-wave.png'),
-                          color: Colors.deepOrange,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'Let\'s start shopping!',
-                          style: GoogleFonts.inter(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: const Color.fromARGB(255, 100, 100, 100),
+                          Row(
+                            children: [
+                              Text(
+                                'Let\'s start shopping!',
+                                style: GoogleFonts.inter(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color.fromARGB(
+                                    255,
+                                    100,
+                                    100,
+                                    100,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      const Ads(),
+                      const SizedBox(height: 10),
+                      const Categories_all(),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        margin: EdgeInsets.only(top: 4),
+                        child: Wrap(
+                          spacing: 12,
+                          runSpacing: 12,
+                          children: [ProductCard(), ProductCard()],
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
-                const SizedBox(height: 20),
-                const Ads(),
-                const SizedBox(height: 10),
-                const Categories_all(),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         bottomNavigationBar: BottomAppBar(
