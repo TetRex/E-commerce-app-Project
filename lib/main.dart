@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/components/categories.dart';
 import 'package:e_commerce_app/components/product_card.dart';
 import 'package:e_commerce_app/components/snackbar.dart';
+import 'package:e_commerce_app/profile.dart';
 import 'package:flutter/material.dart';
 import 'components/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -178,7 +179,7 @@ class MainApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              SizedBox(
+              SizedBox( 
                 child: IconButton(
                   onPressed: () {},
                   icon: ImageIcon(
@@ -210,7 +211,13 @@ class MainApp extends StatelessWidget {
               ),
               SizedBox(
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Profile()
+                      )
+                    );
+                  },
                   icon: ImageIcon(
                     AssetImage('assets/icons/user.png'),
                     size: 30,
