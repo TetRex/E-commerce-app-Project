@@ -38,8 +38,8 @@ class _ProductCardState extends State<ProductCard> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              height: 250,
-              width: 185,
+              height: 230,
+              width: 170,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 230, 230, 230),
                 borderRadius: BorderRadius.circular(16),
@@ -124,7 +124,7 @@ class _ProductCardState extends State<ProductCard> {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.interTight(
-                        fontSize: 13,
+                        fontSize: 12,
                         fontWeight: FontWeight.w600,
                         color: Colors.black87,
                       ),

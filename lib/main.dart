@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/components/categories.dart';
 import 'package:e_commerce_app/components/product_card.dart';
 import 'package:e_commerce_app/components/snackbar.dart';
-import 'package:e_commerce_app/profile.dart';
+import 'package:e_commerce_app/account_page.dart';
 import 'package:flutter/material.dart';
 import 'components/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -175,57 +175,60 @@ class MainApp extends StatelessWidget {
         ),
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              SizedBox( 
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    AssetImage('assets/icons/home.png'),
-                    size: 30,
-                    color: const Color.fromARGB(255, 255, 102, 0),
+          child: Builder(
+            builder: (context) => Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: ImageIcon(
+                      AssetImage('assets/icons/home.png'),
+                      size: 30,
+                      color: const Color.fromARGB(255, 255, 102, 0),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    AssetImage('assets/icons/heart.png'),
-                    size: 30,
-                    color: const Color.fromARGB(255, 120, 120, 120),
+                SizedBox(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: ImageIcon(
+                      AssetImage('assets/icons/heart.png'),
+                      size: 30,
+                      color: const Color.fromARGB(255, 120, 120, 120),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    AssetImage('assets/icons/shopping-cart.png'),
-                    size: 30,
-                    color: const Color.fromARGB(255, 120, 120, 120),
+                SizedBox(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: ImageIcon(
+                      AssetImage('assets/icons/shopping-cart.png'),
+                      size: 30,
+                      color: const Color.fromARGB(255, 120, 120, 120),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Profile()
-                      )
-                    );
-                  },
-                  icon: ImageIcon(
-                    AssetImage('assets/icons/user.png'),
-                    size: 30,
-                    color: const Color.fromARGB(255, 120, 120, 120),
+                SizedBox(
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ProfilePage(),
+                        ),
+                      );
+                    },
+                    icon: ImageIcon(
+                      AssetImage('assets/icons/user.png'),
+                      size: 30,
+                      color: const Color.fromARGB(255, 120, 120, 120),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
