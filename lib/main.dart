@@ -176,7 +176,9 @@ class MainApp extends StatelessWidget {
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,
           child: Builder(
+            //Navigation.push can't be used without Builder because Navigator
             builder: (context) => Row(
+              //operation requested with a context that does not include a Navigator
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
