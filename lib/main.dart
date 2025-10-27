@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/components/categories.dart';
 import 'package:e_commerce_app/components/product_card.dart';
 import 'package:e_commerce_app/components/snackbar.dart';
-import 'package:e_commerce_app/account_page.dart';
+import 'package:e_commerce_app/profile.dart';
 import 'package:flutter/material.dart';
 import 'components/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -218,7 +218,7 @@ class MainApp extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ProfilePage(),
+                          builder: (context) => const Profile(),
                         ),
                       );
                     },
