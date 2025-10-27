@@ -1,4 +1,3 @@
-import 'package:e_commerce_app/components/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -71,12 +70,12 @@ class AppDrawer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DrawerRow(
-              iconPath: 'assets/icons/messages.png',
-              settingText: 'Messages',
+              iconPath: 'assets/icons/user.png',
+              settingText: 'Profile',
             ),
             DrawerRow(
-              iconPath: 'assets/icons/settings.png',
-              settingText: 'Settings',
+              iconPath: 'assets/icons/messages.png',
+              settingText: 'Messages',
             ),
             DrawerRow(
               iconPath: 'assets/icons/language.png',
@@ -85,6 +84,10 @@ class AppDrawer extends StatelessWidget {
             DrawerRow(
               iconPath: 'assets/icons/contrast.png',
               settingText: 'Theme',
+            ),
+            DrawerRow(
+              iconPath: 'assets/icons/settings.png',
+              settingText: 'Settings',
             ),
             DrawerRow(iconPath: 'assets/icons/info.png', settingText: 'About'),
           ],

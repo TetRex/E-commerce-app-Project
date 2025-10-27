@@ -92,7 +92,8 @@ class Categories_all extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: Colors.white,
-                  shadowColor: const Color.fromARGB(255, 219, 132, 1),
+                  shadowColor: const Color.fromARGB(255, 255, 255, 255),
+                  overlayColor: Colors.white,
                 ),
                 onPressed: () => showNotReadySnackBar(context),
                 child: Text(
