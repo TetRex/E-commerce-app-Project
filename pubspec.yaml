@@ -6,6 +6,12 @@ version: 0.1.0
 environment:
   sdk: ^3.9.2
 
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.png"  # Your icon path
+  min_sdk_android: 21
+
 dependencies:
   flutter:
     sdk: flutter
@@ -42,3 +48,4 @@ flutter:
     - assets/icons/messages.png
     - assets/icons/contrast.png
     - assets/icons/language.png
+    - assets/icons/app_icon.png
