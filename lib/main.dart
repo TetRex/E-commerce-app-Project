@@ -246,8 +246,11 @@ class _MainAppState extends State<MainApp> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const Profile(),
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation1, animation2) =>
+                              const Profile(),
+                          transitionDuration: Duration.zero,
+                          reverseTransitionDuration: Duration.zero,
                         ),
                       );
                     },
