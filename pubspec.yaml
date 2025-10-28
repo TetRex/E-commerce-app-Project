@@ -33,13 +33,6 @@ flutter:
     - assets/icons/search.png
     - assets/icons/drawer.png
     - assets/icons/hand-wave.png
-
-
-    - assets/images/ads1.png
-    - assets/images/ads2.png
-    - assets/images/ads3.png
-
-
     - assets/icons/watch-smart.png
     - assets/icons/tshirt.png
     - assets/icons/bag.png
@@ -51,6 +44,12 @@ flutter:
     - assets/icons/contrast.png
     - assets/icons/language.png
 
+
+    - assets/images/ads1.png
+    - assets/images/ads2.png
+    - assets/images/ads3.png
+
+
     - assets/items/tshirts/t-shirt1.png
     - assets/items/tshirts/t-shirt2.png
     - assets/items/tshirts/t-shirt3.png    
@@ -58,3 +57,18 @@ flutter:
     - assets/items/tshirts/t-shirt5.png  
     - assets/items/tshirts/t-shirt6.png  
     
+
+    - assets/items/watches/apple-watch11.png
+    - assets/items/watches/galaxy-watch-ultra.png
+    - assets/items/watches/galaxy-watch7.png
+    - assets/items/watches/apple-watch-se.png
+    - assets/items/watches/pixel-watch.png
+    - assets/items/watches/huawei-watch.png
+
+
+    - assets/items/bags/bag1.png
+    - assets/items/bags/bag2.png
+    - assets/items/bags/bag3.png
+    - assets/items/bags/bag4.png
+    - assets/items/bags/bag5.png
+    - assets/items/bags/bag6.png

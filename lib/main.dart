@@ -6,24 +6,8 @@ import 'package:flutter/material.dart';
 import 'components/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'components/ads.dart';
-
-class Product {
-  final String name;
-  final String imagePath;
-  final double currentPrice;
-  final double? oldPrice;
-  final int? discountPercent;
-  final String category; // Add category field
-
-  Product({
-    required this.name,
-    required this.imagePath,
-    required this.currentPrice,
-    this.oldPrice,
-    this.discountPercent,
-    required this.category,
-  });
-}
+import 'models/product_list.dart';
+import 'models/product.dart';
 
 void main() {
   runApp(const MainApp());
@@ -38,62 +22,6 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   String selectedCategory = 'all'; // Track selected category
-
-  // Define all products with categories
-  final List<Product> allProducts = [
-    Product(
-      name: 'Apple Watch Series 9',
-      imagePath: 'assets/images/apple-watch.png',
-      currentPrice: 14.99,
-      oldPrice: 29.90,
-      discountPercent: 50,
-      category: 'watch',
-    ),
-    Product(
-      name: 'T-Shirt Brown',
-      imagePath: 'assets/items/tshirts/t-shirt1.png',
-      currentPrice: 14.99,
-      oldPrice: 29.90,
-      discountPercent: 50,
-      category: 'tshirt',
-    ),
-    Product(
-      name: 'T-Shirt Black',
-      imagePath: 'assets/items/tshirts/t-shirt2.png',
-      currentPrice: 14.99,
-      oldPrice: 29.90,
-      discountPercent: 50,
-      category: 'tshirt',
-    ),
-    Product(
-      name: 'T-Shirt Grey',
-      imagePath: 'assets/items/tshirts/t-shirt3.png',
-      currentPrice: 14.99,
-      oldPrice: 29.90,
-      discountPercent: 50,
-      category: 'tshirt',
-    ),
-    Product(
-      name: 'T-Shirt Navi Blue',
-      imagePath: 'assets/items/tshirts/t-shirt4.png',
-      currentPrice: 19.99,
-      category: 'tshirt',
-    ),
-    Product(
-      name: 'T-Shirt Pink',
-      imagePath: 'assets/items/tshirts/t-shirt5.png',
-      currentPrice: 14.99,
-      oldPrice: 39.90,
-      discountPercent: 50,
-      category: 'tshirt',
-    ),
-    Product(
-      name: 'T-Shirt Dark Green',
-      imagePath: 'assets/items/tshirts/t-shirt6.png',
-      currentPrice: 19.99,
-      category: 'tshirt',
-    ),
-  ];
 
   // Filter products based on selected category
   List<Product> get filteredProducts {
