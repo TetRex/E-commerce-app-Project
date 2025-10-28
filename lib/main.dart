@@ -7,7 +7,6 @@ import 'components/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'components/ads.dart';
 import 'models/product_list.dart';
-import 'models/product.dart';
 
 void main() {
   runApp(const MainApp());
