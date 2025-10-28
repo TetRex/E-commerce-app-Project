@@ -50,25 +50,25 @@ flutter:
     - assets/images/ads3.png
 
 
-    - assets/items/tshirts/t-shirt1.png
-    - assets/items/tshirts/t-shirt2.png
-    - assets/items/tshirts/t-shirt3.png    
-    - assets/items/tshirts/t-shirt4.png  
-    - assets/items/tshirts/t-shirt5.png  
-    - assets/items/tshirts/t-shirt6.png  
+    - assets/products/tshirts/t-shirt1.png
+    - assets/products/tshirts/t-shirt2.png
+    - assets/products/tshirts/t-shirt3.png    
+    - assets/products/tshirts/t-shirt4.png  
+    - assets/products/tshirts/t-shirt5.png  
+    - assets/products/tshirts/t-shirt6.png  
     
 
-    - assets/items/watches/apple-watch11.png
-    - assets/items/watches/galaxy-watch-ultra.png
-    - assets/items/watches/galaxy-watch7.png
-    - assets/items/watches/apple-watch-se.png
-    - assets/items/watches/pixel-watch.png
-    - assets/items/watches/huawei-watch.png
+    - assets/products/watches/apple-watch11.png
+    - assets/products/watches/galaxy-watch-ultra.png
+    - assets/products/watches/galaxy-watch7.png
+    - assets/products/watches/apple-watch-se.png
+    - assets/products/watches/pixel-watch.png
+    - assets/products/watches/huawei-watch.png
 
 
-    - assets/items/bags/bag1.png
-    - assets/items/bags/bag2.png
-    - assets/items/bags/bag3.png
-    - assets/items/bags/bag4.png
-    - assets/items/bags/bag5.png
-    - assets/items/bags/bag6.png
+    - assets/products/bags/bag1.png
+    - assets/products/bags/bag2.png
+    - assets/products/bags/bag3.png
+    - assets/products/bags/bag4.png
+    - assets/products/bags/bag5.png
+    - assets/products/bags/bag6.png
