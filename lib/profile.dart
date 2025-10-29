@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/main.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 dynamic bgcolor = Colors.white;
 dynamic fgcolor = Colors.deepOrange;
@@ -20,7 +21,6 @@ class Profile extends StatelessWidget {
       home: Scaffold(
         backgroundColor: bgcolor,
         appBar: AppBar(
-          title: Text('My Profile'),
           scrolledUnderElevation: 0,
           surfaceTintColor: Colors.transparent,
           backgroundColor: Colors.white,
@@ -28,8 +28,29 @@ class Profile extends StatelessWidget {
           titleSpacing: 0,
           leadingWidth: 70,
 
-          
+          leading: Container(
+            // decoration: BoxDecoration(
+            //   color:bgcolor,
+            //   shape: BoxShape.circle,
+            // ),
+            margin: EdgeInsets.all(5),
           ),
+          actions: [
+            Container(
+              decoration: BoxDecoration(
+                color: bgcolor,
+                shape: BoxShape.circle,
+              ),
+              margin: EdgeInsets.all(1),
+              child:Text(
+                'My Profile', style: GoogleFonts.interTight(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold
+                )
+              ),
+            ),
+          ],
+        ),
         body: Row(children: [Text('Hello World')]),
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,
