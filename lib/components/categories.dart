@@ -6,15 +6,28 @@ class CategoryItem {
   final String iconPath;
   final Color? backgroundColor;
   final Color? iconColor;
+  final String id; // Add category ID
 
-  CategoryItem({required this.iconPath, this.backgroundColor, this.iconColor});
+  CategoryItem({
+    required this.iconPath,
+    required this.id,
+    this.backgroundColor,
+    this.iconColor,
+  });
 }
 
 // Widget to display a single category
 class Categorie extends StatelessWidget {
   final CategoryItem category;
+  final bool isSelected;
+  final VoidCallback onTap;
 
-  const Categorie({super.key, required this.category});
+  const Categorie({
+    super.key,
+    required this.category,
+    required this.isSelected,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +40,15 @@ class Categorie extends StatelessWidget {
             height: 70,
             width: 70,
             decoration: BoxDecoration(
-              color:
-                  category.backgroundColor ??
-                  const Color.fromARGB(255, 221, 220, 220),
+              color: isSelected
+                  // ignore: deprecated_member_use
+                  ? Colors.orange.withOpacity(0.3)
+                  : (category.backgroundColor ??
+                        const Color.fromARGB(255, 221, 220, 220)),
               borderRadius: BorderRadius.circular(8),
+              border: isSelected
+                  ? Border.all(color: Colors.orange, width: 2)
+                  : null,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black,
@@ -41,12 +59,13 @@ class Categorie extends StatelessWidget {
             ),
             child: Center(
               child: IconButton(
-                onPressed: () {},
+                onPressed: onTap,
                 icon: ImageIcon(
                   AssetImage(category.iconPath),
-                  color:
-                      category.iconColor ??
-                      const Color.fromARGB(255, 85, 85, 85),
+                  color: isSelected
+                      ? Colors.orange
+                      : (category.iconColor ??
+                            const Color.fromARGB(255, 85, 85, 85)),
                   size: 30,
                 ),
               ),
@@ -60,16 +79,23 @@ class Categorie extends StatelessWidget {
 
 // ignore: camel_case_types
 class Categories_all extends StatelessWidget {
-  const Categories_all({super.key});
+  final String selectedCategory;
+  final Function(String) onCategorySelected;
+
+  const Categories_all({
+    super.key,
+    required this.selectedCategory,
+    required this.onCategorySelected,
+  });
 
   @override
   Widget build(BuildContext context) {
     final List<CategoryItem> categories = [
-      CategoryItem(iconPath: 'assets/icons/watch-smart.png'),
-      CategoryItem(iconPath: 'assets/icons/tshirt.png'),
-      CategoryItem(iconPath: 'assets/icons/bag.png'),
-      CategoryItem(iconPath: 'assets/icons/boot.png'),
-      CategoryItem(iconPath: 'assets/icons/glasses.png'),
+      CategoryItem(iconPath: 'assets/icons/watch-smart.png', id: 'watch'),
+      CategoryItem(iconPath: 'assets/icons/tshirt.png', id: 'tshirt'),
+      CategoryItem(iconPath: 'assets/icons/bag.png', id: 'bag'),
+      CategoryItem(iconPath: 'assets/icons/boot.png', id: 'boot'),
+      CategoryItem(iconPath: 'assets/icons/glasses.png', id: 'glasses'),
     ];
 
     return SizedBox(
@@ -92,7 +118,8 @@ class Categories_all extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: Colors.white,
-                  shadowColor: const Color.fromARGB(255, 219, 132, 1),
+                  shadowColor: const Color.fromARGB(255, 255, 255, 255),
+                  overlayColor: Colors.white,
                 ),
                 onPressed: () => showNotReadySnackBar(context),
                 child: Text(
@@ -130,7 +157,11 @@ class Categories_all extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: categories.length,
                   itemBuilder: (context, index) {
-                    return Categorie(category: categories[index]);
+                    return Categorie(
+                      category: categories[index],
+                      isSelected: selectedCategory == categories[index].id,
+                      onTap: () => onCategorySelected(categories[index].id),
+                    );
                   },
                 ),
               ),

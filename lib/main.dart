@@ -6,13 +6,83 @@ import 'package:flutter/material.dart';
 import 'components/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'components/ads.dart';
+import 'models/product_list.dart';
 
 void main() {
   runApp(const MainApp());
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  String selectedCategory = 'all'; // Track selected category
+
+  // Filter products based on selected category
+  List<Product> get filteredProducts {
+    if (selectedCategory == 'all') {
+      return allProducts;
+    }
+    return allProducts.where((p) => p.category == selectedCategory).toList();
+  }
+
+  void onCategorySelected(String category) {
+    setState(() {
+      selectedCategory = category;
+    });
+  }
+
+  Widget _buildProductGrid(List<Product> products) {
+    if (products.isEmpty) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Text(
+            'No products available in this category',
+            style: GoogleFonts.interTight(
+              fontSize: 16,
+              color: Colors.grey[600],
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Column(
+      children: [
+        for (int i = 0; i < products.length; i += 2)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ProductCard(
+                  productName: products[i].name,
+                  imagePath: products[i].imagePath,
+                  currentPrice: products[i].currentPrice,
+                  oldPrice: products[i].oldPrice,
+                  discountPercent: products[i].discountPercent,
+                ),
+                if (i + 1 < products.length) ...[
+                  const SizedBox(width: 18),
+                  ProductCard(
+                    productName: products[i + 1].name,
+                    imagePath: products[i + 1].imagePath,
+                    currentPrice: products[i + 1].currentPrice,
+                    oldPrice: products[i + 1].oldPrice,
+                    discountPercent: products[i + 1].discountPercent,
+                  ),
+                ],
+              ],
+            ),
+          ),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,54 +187,13 @@ class MainApp extends StatelessWidget {
                       const SizedBox(height: 20),
                       const Ads(),
                       const SizedBox(height: 10),
-                      const Categories_all(),
+                      Categories_all(
+                        selectedCategory: selectedCategory,
+                        onCategorySelected: onCategorySelected,
+                      ),
                       Container(
                         margin: EdgeInsets.only(top: 4),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const ProductCard(
-                                  productName: 'Apple Watch Series 9',
-                                  imagePath: 'assets/images/apple-watch.png',
-                                  currentPrice: 124.99,
-                                  oldPrice: 249.99,
-                                  discountPercent: 50,
-                                ),
-                                const SizedBox(width: 18),
-                                const ProductCard(
-                                  productName: 'Samsung Galaxy Watch 7',
-                                  imagePath: 'assets/images/samsung-watch.avif',
-                                  currentPrice: 129.99,
-                                  oldPrice: 189.99,
-                                  discountPercent: 32,
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 16),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const ProductCard(
-                                  productName: 'Apple Watch Series 9',
-                                  imagePath: 'assets/images/apple-watch.png',
-                                  currentPrice: 124.99,
-                                  oldPrice: 249.99,
-                                  discountPercent: 50,
-                                ),
-                                const SizedBox(width: 18),
-                                const ProductCard(
-                                  productName: 'Samsung Galaxy Watch 7',
-                                  imagePath: 'assets/images/samsung-watch.avif',
-                                  currentPrice: 129.99,
-                                  oldPrice: 189.99,
-                                  discountPercent: 32,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                        child: _buildProductGrid(filteredProducts),
                       ),
                     ],
                   ),
@@ -217,8 +246,11 @@ class MainApp extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const Profile(),
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation1, animation2) =>
+                              const Profile(),
+                          transitionDuration: Duration.zero,
+                          reverseTransitionDuration: Duration.zero,
                         ),
                       );
                     },

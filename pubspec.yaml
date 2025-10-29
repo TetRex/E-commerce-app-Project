@@ -6,6 +6,12 @@ version: 0.1.0
 environment:
   sdk: ^3.9.2
 
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.png"  # Your icon path
+  min_sdk_android: 21
+
 dependencies:
   flutter:
     sdk: flutter
@@ -27,13 +33,42 @@ flutter:
     - assets/icons/search.png
     - assets/icons/drawer.png
     - assets/icons/hand-wave.png
-    - assets/images/ads1.png
-    - assets/images/ads2.png
-    - assets/images/ads3.png
     - assets/icons/watch-smart.png
     - assets/icons/tshirt.png
     - assets/icons/bag.png
     - assets/icons/boot.png
     - assets/icons/glasses.png
-    - assets/images/apple-watch.png
-    - assets/images/samsung-watch.avif
+    - assets/icons/settings.png
+    - assets/icons/info.png
+    - assets/icons/messages.png
+    - assets/icons/contrast.png
+    - assets/icons/language.png
+
+
+    - assets/images/ads1.png
+    - assets/images/ads2.png
+    - assets/images/ads3.png
+
+
+    - assets/products/tshirts/t-shirt1.png
+    - assets/products/tshirts/t-shirt2.png
+    - assets/products/tshirts/t-shirt3.png    
+    - assets/products/tshirts/t-shirt4.png  
+    - assets/products/tshirts/t-shirt5.png  
+    - assets/products/tshirts/t-shirt6.png  
+    
+
+    - assets/products/watches/apple-watch11.png
+    - assets/products/watches/galaxy-watch-ultra.png
+    - assets/products/watches/galaxy-watch7.png
+    - assets/products/watches/apple-watch-se.png
+    - assets/products/watches/pixel-watch.png
+    - assets/products/watches/huawei-watch.png
+
+
+    - assets/products/bags/bag1.png
+    - assets/products/bags/bag2.png
+    - assets/products/bags/bag3.png
+    - assets/products/bags/bag4.png
+    - assets/products/bags/bag5.png
+    - assets/products/bags/bag6.png

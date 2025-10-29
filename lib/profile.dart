@@ -1,7 +1,8 @@
+import 'package:e_commerce_app/main.dart';
 import 'package:flutter/material.dart';
 
 dynamic bgcolor = Colors.white;
-dynamic maincolor = Colors.deepOrange; 
+dynamic fgcolor = Colors.deepOrange;
 dynamic buttoncolor = Color.fromARGB(255, 100, 100, 100);
 
 // class text extends Text
@@ -20,20 +21,80 @@ class Profile extends StatelessWidget {
         backgroundColor: bgcolor,
         appBar: AppBar(
           title: Text('My Profile'),
+          scrolledUnderElevation: 0,
+          surfaceTintColor: Colors.transparent,
+          backgroundColor: Colors.white,
           elevation: 0,
-          // actions: [
-          //   IconButton(
-          //     onPressed: () {},
-          //     icon: )
-          // ],
-        ),
-        body:  Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Hello World')
-          ],
+          titleSpacing: 0,
+          leadingWidth: 70,
+
+          
+          ),
+        body: Row(children: [Text('Hello World')]),
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.white,
+          child: Builder(
+            //Navigation.push can't be used without Builder because Navigator
+            builder: (context) => Row(
+              //operation requested with a context that does not include a Navigator
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation1, animation2) =>
+                              const MainApp(),
+                          transitionDuration: Duration.zero,
+                          reverseTransitionDuration: Duration.zero,
+                        ),
+                      );
+                    },
+                    icon: ImageIcon(
+                      AssetImage('assets/icons/home.png'),
+                      size: 30,
+                      color: const Color.fromARGB(255, 120, 120, 120),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: ImageIcon(
+                      AssetImage('assets/icons/heart.png'),
+                      size: 30,
+                      color: const Color.fromARGB(255, 120, 120, 120),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: ImageIcon(
+                      AssetImage('assets/icons/shopping-cart.png'),
+                      size: 30,
+                      color: const Color.fromARGB(255, 120, 120, 120),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: ImageIcon(
+                      AssetImage('assets/icons/user.png'),
+                      size: 30,
+                      color: const Color.fromARGB(255, 255, 102, 0),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
-} 
+}
