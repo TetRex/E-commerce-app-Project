@@ -20,6 +20,11 @@ class Profile extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: bgcolor,
+
+
+
+
+
         appBar: AppBar(
           scrolledUnderElevation: 0,
           surfaceTintColor: Colors.transparent,
@@ -51,7 +56,24 @@ class Profile extends StatelessWidget {
             ),
           ],
         ),
-        body: Row(children: [Text('Hello World')]),
+
+
+
+
+
+        body: Container(
+          margin: const EdgeInsets.only(left: 0, right: 0),
+          child: ListView(
+            children: [
+              Padding(padding: const EdgeInsets.all(10))
+            ],
+          ),
+        ),
+
+
+
+
+
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,
           child: Builder(
