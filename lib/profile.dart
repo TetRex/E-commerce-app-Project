@@ -27,13 +27,18 @@ class Profile extends StatelessWidget {
           backgroundColor: Colors.white,
           elevation: 0,
           titleSpacing: 0,
-          leadingWidth: 70,
-          title: Text(
-            'My Profile',
-            style: GoogleFonts.interTight(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
+          leadingWidth: 0,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+              'My Profile',
+              style: GoogleFonts.interTight(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
 
           leading: Container(
@@ -55,7 +60,10 @@ class Profile extends StatelessWidget {
         body: Container(
           margin: const EdgeInsets.only(left: 0, right: 0),
           child: ListView(
-            children: [Padding(padding: const EdgeInsets.all(10))],
+            children: [
+              Padding(padding: const EdgeInsets.all(10)),
+              
+            ],
           ),
         ),
 
