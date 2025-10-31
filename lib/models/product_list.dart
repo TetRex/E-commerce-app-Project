@@ -8,6 +8,7 @@ class Product {
   final int? discountPercent;
   final String category;
   final int id;
+  bool favorite;
 
   Product({
     required this.name,
@@ -17,6 +18,7 @@ class Product {
     this.discountPercent,
     required this.category,
     required this.id,
+    this.favorite = false,
   });
 }
 
@@ -30,35 +32,35 @@ final List<Product> _productList = [
     id: 1,
   ),
   Product(
-    name: 'Galaxy Watch Ultra',
+    name: 'Samsung Galaxy Watch Ultra',
     imagePath: 'assets/products/watches/galaxy-watch-ultra.png',
     currentPrice: 599.99,
     category: 'watch',
     id: 2,
   ),
   Product(
-    name: 'Apple Watch SE',
+    name: 'Apple Watch SE Gen 2',
     imagePath: 'assets/products/watches/apple-watch-se.png',
     currentPrice: 200.99,
     category: 'watch',
     id: 3,
   ),
   Product(
-    name: 'Galaxy Watch 7',
+    name: 'Samsung Galaxy Watch 7',
     imagePath: 'assets/products/watches/galaxy-watch7.png',
     currentPrice: 200.99,
     category: 'watch',
     id: 4,
   ),
   Product(
-    name: 'Google Pixel Watch',
+    name: 'Google Pixel Watch 3',
     imagePath: 'assets/products/watches/pixel-watch.png',
     currentPrice: 319.90,
     category: 'watch',
     id: 5,
   ),
   Product(
-    name: 'Huawei Watch GT4',
+    name: 'Huawei Watch GT 4',
     imagePath: 'assets/products/watches/huawei-watch.png',
     currentPrice: 249.90,
     category: 'watch',
@@ -67,7 +69,7 @@ final List<Product> _productList = [
 
   // T-Shirts
   Product(
-    name: 'T-Shirt Brown',
+    name: 'Classic Brown Cotton Tee',
     imagePath: 'assets/products/tshirts/t-shirt1.png',
     currentPrice: 14.99,
     oldPrice: 29.90,
@@ -76,7 +78,7 @@ final List<Product> _productList = [
     id: 7,
   ),
   Product(
-    name: 'T-Shirt Black',
+    name: 'Essential Black T-Shirt',
     imagePath: 'assets/products/tshirts/t-shirt2.png',
     currentPrice: 14.99,
     oldPrice: 29.90,
@@ -85,7 +87,7 @@ final List<Product> _productList = [
     id: 8,
   ),
   Product(
-    name: 'T-Shirt Grey',
+    name: 'Heather Grey Crew Neck',
     imagePath: 'assets/products/tshirts/t-shirt3.png',
     currentPrice: 14.99,
     oldPrice: 29.90,
@@ -94,14 +96,14 @@ final List<Product> _productList = [
     id: 9,
   ),
   Product(
-    name: 'T-Shirt Navi Blue',
+    name: 'Navy Blue Premium Tee',
     imagePath: 'assets/products/tshirts/t-shirt4.png',
     currentPrice: 19.99,
     category: 'tshirt',
     id: 10,
   ),
   Product(
-    name: 'T-Shirt Pink',
+    name: 'Soft Pink Casual Shirt',
     imagePath: 'assets/products/tshirts/t-shirt5.png',
     currentPrice: 14.99,
     oldPrice: 39.90,
@@ -110,15 +112,16 @@ final List<Product> _productList = [
     id: 11,
   ),
   Product(
-    name: 'T-Shirt Dark Green',
+    name: 'Forest Green V-Neck',
     imagePath: 'assets/products/tshirts/t-shirt6.png',
     currentPrice: 19.99,
     category: 'tshirt',
     id: 12,
   ),
 
+  // Bags
   Product(
-    name: 'Black Leather Bag',
+    name: 'Classic Leather Tote Bag',
     imagePath: 'assets/products/bags/bag1.png',
     currentPrice: 19.99,
     oldPrice: 40.90,
@@ -127,7 +130,7 @@ final List<Product> _productList = [
     id: 13,
   ),
   Product(
-    name: 'Black Leather Bag',
+    name: 'Vintage Messenger Bag',
     imagePath: 'assets/products/bags/bag2.png',
     currentPrice: 19.99,
     oldPrice: 40.90,
@@ -136,7 +139,7 @@ final List<Product> _productList = [
     id: 14,
   ),
   Product(
-    name: 'Black Leather Bag',
+    name: 'Modern Crossbody Purse',
     imagePath: 'assets/products/bags/bag3.png',
     currentPrice: 19.99,
     oldPrice: 40.90,
@@ -145,7 +148,7 @@ final List<Product> _productList = [
     id: 15,
   ),
   Product(
-    name: 'Black Leather Bag',
+    name: 'Luxury Designer Handbag',
     imagePath: 'assets/products/bags/bag4.png',
     currentPrice: 19.99,
     oldPrice: 40.90,
@@ -154,7 +157,7 @@ final List<Product> _productList = [
     id: 16,
   ),
   Product(
-    name: 'Black Leather Bag',
+    name: 'Travel Backpack Pro',
     imagePath: 'assets/products/bags/bag5.png',
     currentPrice: 19.99,
     oldPrice: 40.90,
@@ -163,7 +166,7 @@ final List<Product> _productList = [
     id: 17,
   ),
   Product(
-    name: 'Black Leather Bag',
+    name: 'Business Briefcase Elite',
     imagePath: 'assets/products/bags/bag6.png',
     currentPrice: 19.99,
     oldPrice: 40.90,
@@ -171,7 +174,60 @@ final List<Product> _productList = [
     category: 'bag',
     id: 18,
   ),
-  // Add more categories here (bags, boots, glasses, etc.)
+  Product(
+    name: 'Boots',
+    imagePath: 'assets/products/boots/boots1.png',
+    currentPrice: 19.99,
+    oldPrice: 40.90,
+    discountPercent: 50,
+    category: 'boot',
+    id: 19,
+  ),
+  Product(
+    name: 'Boots',
+    imagePath: 'assets/products/boots/boots2.png',
+    currentPrice: 19.99,
+    oldPrice: 40.90,
+    discountPercent: 50,
+    category: 'boot',
+    id: 20,
+  ),
+  Product(
+    name: 'Boots',
+    imagePath: 'assets/products/boots/boots3.png',
+    currentPrice: 19.99,
+    oldPrice: 40.90,
+    discountPercent: 50,
+    category: 'boot',
+    id: 21,
+  ),
+  Product(
+    name: 'Boots',
+    imagePath: 'assets/products/boots/boots4.png',
+    currentPrice: 19.99,
+    oldPrice: 40.90,
+    discountPercent: 50,
+    category: 'boot',
+    id: 22,
+  ),
+  Product(
+    name: 'Boots',
+    imagePath: 'assets/products/boots/boots5.png',
+    currentPrice: 19.99,
+    oldPrice: 40.90,
+    discountPercent: 50,
+    category: 'boot',
+    id: 23,
+  ),
+  Product(
+    name: 'Boots',
+    imagePath: 'assets/products/boots/boots6.png',
+    currentPrice: 19.99,
+    oldPrice: 40.90,
+    discountPercent: 50,
+    category: 'boot',
+    id: 24,
+  ),
 ];
 
 List<Product> get allProducts => List.from(_productList)..shuffle(Random());
