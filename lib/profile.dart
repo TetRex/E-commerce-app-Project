@@ -21,6 +21,10 @@ class Profile extends StatelessWidget {
       home: Scaffold(
         backgroundColor: bgcolor,
 
+
+
+
+
         appBar: AppBar(
           scrolledUnderElevation: 0,
           surfaceTintColor: Colors.transparent,
@@ -32,40 +36,69 @@ class Profile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-              'My Profile',
-              style: GoogleFonts.interTight(
+                'My Profile',
+                style: GoogleFonts.interTight(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
-
-          leading: Container(
-            // decoration: BoxDecoration(
-            //   color:bgcolor,
-            //   shape: BoxShape.circle,
-            // ),
-            margin: EdgeInsets.all(5),
-          ),
-          actions: [
-            Container(
-              decoration: BoxDecoration(color: bgcolor, shape: BoxShape.circle),
-              margin: EdgeInsets.all(1),
-              child: Row(),
-            ),
-          ],
+          // leading: Container(
+          //   // decoration: BoxDecoration(
+          //   //   color:bgcolor,
+          //   //   shape: BoxShape.circle,
+          //   // ),
+          //   margin: EdgeInsets.all(5),
+          // ),
+          // actions: [
+          //   Container(
+          //     decoration: BoxDecoration(color: bgcolor, shape: BoxShape.circle),
+          //     margin: EdgeInsets.all(1),
+          //     child: Row(),
+          //   ),
+          // ],
         ),
+
+
+
+
 
         body: Container(
           margin: const EdgeInsets.only(left: 0, right: 0),
           child: ListView(
             children: [
-              Padding(padding: const EdgeInsets.all(10)),
-              
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        
+                        ImageIcon(
+                          AssetImage('assets/icons/user.png'),
+                        ),
+                        Text(
+                          'Profile',
+                          style: GoogleFonts.interTight(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
+
+
+
+
 
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,
