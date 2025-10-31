@@ -21,10 +21,6 @@ class Profile extends StatelessWidget {
       home: Scaffold(
         backgroundColor: bgcolor,
 
-
-
-
-
         appBar: AppBar(
           scrolledUnderElevation: 0,
           surfaceTintColor: Colors.transparent,
@@ -32,6 +28,13 @@ class Profile extends StatelessWidget {
           elevation: 0,
           titleSpacing: 0,
           leadingWidth: 70,
+          title: Text(
+            'My Profile',
+            style: GoogleFonts.interTight(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
 
           leading: Container(
             // decoration: BoxDecoration(
@@ -42,37 +45,19 @@ class Profile extends StatelessWidget {
           ),
           actions: [
             Container(
-              decoration: BoxDecoration(
-                color: bgcolor,
-                shape: BoxShape.circle,
-              ),
+              decoration: BoxDecoration(color: bgcolor, shape: BoxShape.circle),
               margin: EdgeInsets.all(1),
-              child:Text(
-                'My Profile', style: GoogleFonts.interTight(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold
-                )
-              ),
+              child: Row(),
             ),
           ],
         ),
 
-
-
-
-
         body: Container(
           margin: const EdgeInsets.only(left: 0, right: 0),
           child: ListView(
-            children: [
-              Padding(padding: const EdgeInsets.all(10))
-            ],
+            children: [Padding(padding: const EdgeInsets.all(10))],
           ),
         ),
-
-
-
-
 
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,

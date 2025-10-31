@@ -7,6 +7,7 @@ class Product {
   final double? oldPrice;
   final int? discountPercent;
   final String category;
+  final int id;
 
   Product({
     required this.name,
@@ -15,6 +16,7 @@ class Product {
     this.oldPrice,
     this.discountPercent,
     required this.category,
+    required this.id,
   });
 }
 
@@ -25,36 +27,42 @@ final List<Product> _productList = [
     imagePath: 'assets/products/watches/apple-watch11.png',
     currentPrice: 509.90,
     category: 'watch',
+    id: 1,
   ),
   Product(
     name: 'Galaxy Watch Ultra',
     imagePath: 'assets/products/watches/galaxy-watch-ultra.png',
     currentPrice: 599.99,
     category: 'watch',
+    id: 2,
   ),
   Product(
     name: 'Apple Watch SE',
     imagePath: 'assets/products/watches/apple-watch-se.png',
     currentPrice: 200.99,
     category: 'watch',
+    id: 3,
   ),
   Product(
     name: 'Galaxy Watch 7',
     imagePath: 'assets/products/watches/galaxy-watch7.png',
     currentPrice: 200.99,
     category: 'watch',
+    id: 4,
   ),
   Product(
     name: 'Google Pixel Watch',
     imagePath: 'assets/products/watches/pixel-watch.png',
     currentPrice: 319.90,
     category: 'watch',
+    id: 5,
   ),
   Product(
     name: 'Huawei Watch GT4',
     imagePath: 'assets/products/watches/huawei-watch.png',
     currentPrice: 249.90,
     category: 'watch',
+    id: 6,
   ),
 
   // T-Shirts
@@ -65,6 +73,7 @@ final List<Product> _productList = [
     oldPrice: 29.90,
     discountPercent: 50,
     category: 'tshirt',
+    id: 7,
   ),
   Product(
     name: 'T-Shirt Black',
@@ -73,6 +82,7 @@ final List<Product> _productList = [
     oldPrice: 29.90,
     discountPercent: 50,
     category: 'tshirt',
+    id: 8,
   ),
   Product(
     name: 'T-Shirt Grey',
@@ -81,12 +91,14 @@ final List<Product> _productList = [
     oldPrice: 29.90,
     discountPercent: 50,
     category: 'tshirt',
+    id: 9,
   ),
   Product(
     name: 'T-Shirt Navi Blue',
     imagePath: 'assets/products/tshirts/t-shirt4.png',
     currentPrice: 19.99,
     category: 'tshirt',
+    id: 10,
   ),
   Product(
     name: 'T-Shirt Pink',
@@ -95,12 +107,14 @@ final List<Product> _productList = [
     oldPrice: 39.90,
     discountPercent: 50,
     category: 'tshirt',
+    id: 11,
   ),
   Product(
     name: 'T-Shirt Dark Green',
     imagePath: 'assets/products/tshirts/t-shirt6.png',
     currentPrice: 19.99,
     category: 'tshirt',
+    id: 12,
   ),
 
   Product(
@@ -110,6 +124,7 @@ final List<Product> _productList = [
     oldPrice: 40.90,
     discountPercent: 50,
     category: 'bag',
+    id: 13,
   ),
   Product(
     name: 'Black Leather Bag',
@@ -118,6 +133,7 @@ final List<Product> _productList = [
     oldPrice: 40.90,
     discountPercent: 50,
     category: 'bag',
+    id: 14,
   ),
   Product(
     name: 'Black Leather Bag',
@@ -126,6 +142,7 @@ final List<Product> _productList = [
     oldPrice: 40.90,
     discountPercent: 50,
     category: 'bag',
+    id: 15,
   ),
   Product(
     name: 'Black Leather Bag',
@@ -134,6 +151,7 @@ final List<Product> _productList = [
     oldPrice: 40.90,
     discountPercent: 50,
     category: 'bag',
+    id: 16,
   ),
   Product(
     name: 'Black Leather Bag',
@@ -142,6 +160,7 @@ final List<Product> _productList = [
     oldPrice: 40.90,
     discountPercent: 50,
     category: 'bag',
+    id: 17,
   ),
   Product(
     name: 'Black Leather Bag',
@@ -150,6 +169,7 @@ final List<Product> _productList = [
     oldPrice: 40.90,
     discountPercent: 50,
     category: 'bag',
+    id: 18,
   ),
   // Add more categories here (bags, boots, glasses, etc.)
 ];

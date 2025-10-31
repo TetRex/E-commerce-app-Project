@@ -66,6 +66,9 @@ class _MainAppState extends State<MainApp> {
                   currentPrice: products[i].currentPrice,
                   oldPrice: products[i].oldPrice,
                   discountPercent: products[i].discountPercent,
+                  onFavoritePressed: () {
+                    setState(() {});
+                  },
                 ),
                 if (i + 1 < products.length) ...[
                   const SizedBox(width: 18),
@@ -75,6 +78,9 @@ class _MainAppState extends State<MainApp> {
                     currentPrice: products[i + 1].currentPrice,
                     oldPrice: products[i + 1].oldPrice,
                     discountPercent: products[i + 1].discountPercent,
+                    onFavoritePressed: () {
+                      setState(() {});
+                    },
                   ),
                 ],
               ],

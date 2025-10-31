@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/components/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -31,7 +32,7 @@ class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: widget.onTap,
+      onTap: () => showNotReadySnackBar(context, message: 'Unknown error'),
       child: Container(
         margin: const EdgeInsets.only(),
         child: Column(
