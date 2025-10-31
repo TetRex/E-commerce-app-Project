@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/main.dart';
+import 'package:e_commerce_app/components/bottombar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,10 +21,6 @@ class Profile extends StatelessWidget {
       home: Scaffold(
         backgroundColor: bgcolor,
 
-
-
-
-
         appBar: AppBar(
           scrolledUnderElevation: 0,
           surfaceTintColor: Colors.transparent,
@@ -38,8 +34,8 @@ class Profile extends StatelessWidget {
               Text(
                 'My Profile',
                 style: GoogleFonts.interTight(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],
@@ -60,10 +56,6 @@ class Profile extends StatelessWidget {
           // ],
         ),
 
-
-
-
-
         body: Container(
           margin: const EdgeInsets.only(left: 0, right: 0),
           child: ListView(
@@ -76,19 +68,16 @@ class Profile extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        
-                        ImageIcon(
-                          AssetImage('assets/icons/user.png'),
-                        ),
+                        ImageIcon(AssetImage('assets/icons/user.png')),
                         Text(
                           'Profile',
                           style: GoogleFonts.interTight(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
-                        )
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -96,73 +85,7 @@ class Profile extends StatelessWidget {
           ),
         ),
 
-
-
-
-
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.white,
-          child: Builder(
-            //Navigation.push can't be used without Builder because Navigator
-            builder: (context) => Row(
-              //operation requested with a context that does not include a Navigator
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                SizedBox(
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        PageRouteBuilder(
-                          pageBuilder: (context, animation1, animation2) =>
-                              const MainApp(),
-                          transitionDuration: Duration.zero,
-                          reverseTransitionDuration: Duration.zero,
-                        ),
-                      );
-                    },
-                    icon: ImageIcon(
-                      AssetImage('assets/icons/home.png'),
-                      size: 30,
-                      color: const Color.fromARGB(255, 120, 120, 120),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: ImageIcon(
-                      AssetImage('assets/icons/heart.png'),
-                      size: 30,
-                      color: const Color.fromARGB(255, 120, 120, 120),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: ImageIcon(
-                      AssetImage('assets/icons/shopping-cart.png'),
-                      size: 30,
-                      color: const Color.fromARGB(255, 120, 120, 120),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: ImageIcon(
-                      AssetImage('assets/icons/user.png'),
-                      size: 30,
-                      color: const Color.fromARGB(255, 255, 102, 0),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        bottomNavigationBar: BottomBar(currentPage: 'profile'),
       ),
     );
   }
