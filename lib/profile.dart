@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 dynamic bgcolor = Colors.white;
 dynamic fgcolor = Colors.deepOrange;
 dynamic buttoncolor = Color.fromARGB(255, 100, 100, 100);
+dynamic balance = 0.00;
 
 // class text extends Text
 void main() {
@@ -65,45 +66,119 @@ class Profile extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ImageIcon(
-                      AssetImage(''),
-                      size: 20
-                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ImageIcon(AssetImage('assets/icons/user.png')),
+                        Column(
+                          children: [
+                            ImageIcon(
+                              AssetImage('assets/icons/user.png'),
+                              size: 120
+                            ),
+                            // Text(
+                            //   'My.Name',
+                            //   style: GoogleFonts.interTight(
+                            //     fontSize: 30,
+                            //     color: Colors.black
+                            //   ),
+                            // )
+                          ]
+                        ),
+                        Text("        "),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              balance.toString(),
+                              style: GoogleFonts.interTight(
+                                fontSize: 60,
+                                color: fgcolor,
+                                fontWeight: FontWeight.bold,
+                              )
+                            ),
+                            Text(
+                              'My Balance',
+                              style: GoogleFonts.interTight(
+                                fontSize: 30,
+                                color: Colors.black
+                              )
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    Text(''),
+                    Text(''),
+                    Text(''),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ImageIcon(AssetImage('assets/icons/user.png'), size: 30),
                         Text(
-                          'History',
-                          style: GoogleFonts.interTight(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
+                          ' My Orders',
+                            style: GoogleFonts.interTight(
+                            fontSize: 30,
+                            color: Colors.black
                           ),
                         ),
                       ],
                     ),
+                    Text(''),
+                    Text(''),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ImageIcon(AssetImage('assets/icons/messages.png')),
+                        ImageIcon(AssetImage('assets/icons/contrast.png'), size: 30),
                         Text(
-                          'Messages',
-                          style: GoogleFonts.interTight(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
+                          ' Theme',
+                            style: GoogleFonts.interTight(
+                            fontSize: 30,
+                            color: Colors.black
                           ),
                         ),
                       ],
                     ),
+                    Text(''),
+                    Text(''),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ImageIcon(AssetImage('assets/icons/language.png')),
+                        ImageIcon(AssetImage('assets/icons/messages.png'), size: 30),
                         Text(
-                          'Language',
-                          style: GoogleFonts.interTight(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
+                          ' Messages',
+                            style: GoogleFonts.interTight(
+                            fontSize: 30,
+                            color: Colors.black
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(''),
+                    Text(''),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ImageIcon(AssetImage('assets/icons/language.png'), size: 30),
+                        Text(
+                          ' Language',
+                            style: GoogleFonts.interTight(
+                            fontSize: 30,
+                            color: Colors.black
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(''),
+                    Text(''),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ImageIcon(AssetImage('assets/icons/settings.png'), size: 30),
+                        Text(
+                          ' Settings',
+                            style: GoogleFonts.interTight(
+                            fontSize: 30,
+                            color: Colors.black
                           ),
                         ),
                       ],
