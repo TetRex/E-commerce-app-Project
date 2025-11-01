@@ -74,7 +74,7 @@ class Profile extends StatelessWidget {
                       children: [
                         ImageIcon(AssetImage('assets/icons/user.png')),
                         Text(
-                          'Profile',
+                          'History',
                           style: GoogleFonts.interTight(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -85,9 +85,9 @@ class Profile extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ImageIcon(AssetImage('assets/icons/user.png')),
+                        ImageIcon(AssetImage('assets/icons/messages.png')),
                         Text(
-                          'Profile',
+                          'Messages',
                           style: GoogleFonts.interTight(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -98,9 +98,9 @@ class Profile extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ImageIcon(AssetImage('assets/icons/user.png')),
+                        ImageIcon(AssetImage('assets/icons/language.png')),
                         Text(
-                          'Profile',
+                          'Language',
                           style: GoogleFonts.interTight(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
