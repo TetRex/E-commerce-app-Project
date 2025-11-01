@@ -65,6 +65,36 @@ class Profile extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    ImageIcon(
+                      AssetImage(''),
+                      size: 20
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ImageIcon(AssetImage('assets/icons/user.png')),
+                        Text(
+                          'Profile',
+                          style: GoogleFonts.interTight(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ImageIcon(AssetImage('assets/icons/user.png')),
+                        Text(
+                          'Profile',
+                          style: GoogleFonts.interTight(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -90,3 +120,24 @@ class Profile extends StatelessWidget {
     );
   }
 }
+            // DrawerRow(
+            //   iconPath: 'assets/icons/user.png',
+            //   settingText: 'Profile',
+            // ),
+            // DrawerRow(
+            //   iconPath: 'assets/icons/messages.png',
+            //   settingText: 'Messages',
+            // ),
+            // DrawerRow(
+            //   iconPath: 'assets/icons/language.png',
+            //   settingText: 'Language',
+            // ),
+            // DrawerRow(
+            //   iconPath: 'assets/icons/contrast.png',
+            //   settingText: 'Theme',
+            // ),
+            // DrawerRow(
+            //   iconPath: 'assets/icons/settings.png',
+            //   settingText: 'Settings',
+            // ),
+            // DrawerRow(iconPath: 'assets/icons/info.png', settingText: 'About'),
